@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceman Futures | $SPXR</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+        }
+        .heading-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+<body class="text-gray-100 overflow-x-hidden selection:bg-cyan-500 selection:text-slate-900">
+
+    <!-- Gradient Background Highlights -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-b from-cyan-500/10 via-purple-500/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-gray-950/70 border-b border-gray-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-rocket text-xl text-white"></i>
+                </div>
+                <span class="heading-font text-xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-cyan-400">SPACEMAN</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#tokenomics" class="hover:text-cyan-400 transition-colors">Tokenomics</a>
+                <a href="#roadmap" class="hover:text-cyan-400 transition-colors">Roadmap</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="https://x.com" target="_blank" class="p-2 text-gray-400 hover:text-white transition-colors text-lg"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://telegram.org" target="_blank" class="p-2 text-gray-400 hover:text-cyan-400 transition-colors text-lg"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#buy" class="heading-font hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 font-bold text-xs tracking-wider text-white hover:opacity-90 active:scale-95 transition-all shadow-md shadow-cyan-500/10">BUY $SPXR</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Hero Section -->
+        <section class="pt-16 pb-24 md:pt-24 md:pb-32 text-center relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-900 border border-gray-800 text-xs font-semibold text-cyan-400 mb-6 tracking-wide uppercase">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Next Gen Space Infrastructure
+            </div>
+            
+            <h1 class="heading-font text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-6 text-white max-w-5xl mx-auto">
+                The Currency of the <br class="hidden sm:inline" />
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">Autonomous Orbit</span>
+            </h1>
+            
+            <p class="text-gray-400 text-base sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Powering automated off-world data structures, robotic satellite logistics, and tokenized hardware layers on the Solana blockchain.
+            </p>
+
+            <!-- Conversion Target: Contract Address Box -->
+            <div class="max-w-xl mx-auto mb-12 bg-gray-900/60 border border-gray-800 rounded-2xl p-2.5 flex items-center justify-between shadow-xl backdrop-blur-sm group hover:border-gray-700/80 transition-colors">
+                <div class="flex items-center gap-3 pl-3 overflow-hidden">
+                    <i class="fa-solid fa-fingerprint text-gray-500 group-hover:text-cyan-400 transition-colors"></i>
+                    <span id="caText" class="font-mono text-xs sm:text-sm text-gray-400 tracking-wider truncate">GcAkpXbn1SD5SLhpVdysZv8ax4GcAfjSmi3EsgZxpump</span>
+                </div>
+                <button onclick="copyContractAddress()" class="heading-font inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-bold text-xs tracking-wider transition-all active:scale-95 shrink-0 cursor-pointer">
+                    <i id="copyIcon" class="fa-regular fa-copy text-cyan-400"></i> <span id="copyText">COPY CA</span>
+                </button>
+            </div>
+
+            <!-- Call To Actions -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://telegram.org" target="_blank" class="heading-font w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 font-bold text-sm tracking-wider text-white shadow-lg shadow-cyan-500/20 hover:opacity-95 transition-all">
+                    <i class="fa-brands fa-telegram text-lg"></i> JOIN TELEGRAM
+                </a>
+                <a href="#about" class="heading-font w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gray-900 border border-gray-800 hover:bg-gray-800 hover:border-gray-700 font-bold text-sm tracking-wider text-gray-300 transition-all">
+                    EXPLORE DATA
+                </a>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Section -->
+        <section id="about" class="py-20 border-t border-gray-900 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="heading-font text-2xl sm:text-4xl font-black text-white mb-6 tracking-tight">
+                    Manned by Code.<br />
+                    Powered by Solana.
+                </h2>
+                <div class="space-y-4 text-gray-400 leading-relaxed text-sm sm:text-base">
+                    <p>The transition to orbital server deployment requires autonomous operations. Human micro-management doesn't scale outside the atmosphere—intelligent robotic scripts and smart protocols do.</p>
+                    <p class="border-l-2 border-cyan-500 pl-4 italic bg-cyan-950/20 py-2 rounded-r-xl">
+                        $SPXR settles resource requests, cross-satellite bandwidth leasing, and hardware energy routing dynamically on-chain.
+                    </p>
+                </div>
+            </div>
+            <!-- Video/Graphic Placeholder Container -->
+            <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.08)_0%,transparent_70%)]"></div>
+                <div class="w-14 h-14 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3 group-hover:scale-110 transition-transform shadow-lg">
+                    <i class="fa-solid fa-circle-play text-xl"></i>
+                </div>
+                <span class="heading-font text-xs font-bold tracking-widest text-gray-400">PROJECT VISUAL SHOWCASE</span>
+            </div>
+        </section>
+
+        <!-- Tokenomics Data -->
+        <section id="tokenomics" class="py-20 border-t border-gray-900">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="heading-font text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight">Token Allocation</h2>
+                <p class="text-gray-400 text-sm sm:text-base">A transparent, completely non-inflationary model engineered for permanent community stability.</p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-gray-900/40 border border-gray-800/80 p-6 rounded-2xl backdrop-blur-sm hover:border-cyan-500/30 transition-colors">
+                    <div class="text-xs font-bold text-cyan-400 mb-2 uppercase tracking-wider">Total Supply</div>
+                    <div class="heading-font text-2xl font-black text-white mb-1">1 Billion</div>
+                    <p class="text-xs text-gray-500">Fixed mint. No authority tags remaining.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-900/40 border border-gray-800/80 p-6 rounded-2xl backdrop-blur-sm hover:border-cyan-500/30 transition-colors">
+                    <div class="text-xs font-bold text-cyan-400 mb-2 uppercase tracking-wider">Liquidity Pool</div>
+                    <div class="heading-font text-2xl font-black text-white mb-1">100% Locked</div>
+                    <p class="text-xs text-gray-500">Automatically permanently burned via Raydium transition.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-900/40 border border-gray-800/80 p-6 rounded-2xl backdrop-blur-sm hover:border-cyan-500/30 transition-colors">
+                    <div class="text-xs font-bold text-cyan-400 mb-2 uppercase tracking-wider">Transaction Tax</div>
+                    <div class="heading-font text-2xl font-black text-white mb-1">0% Clean</div>
+                    <p class="text-xs text-gray-500">Zero buy fees, zero sell fees. Optimized trading routing.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-gray-900/40 border border-gray-800/80 p-6 rounded-2xl backdrop-blur-sm hover:border-cyan-500/30 transition-colors">
+                    <div class="text-xs font-bold text-cyan-400 mb-2 uppercase tracking-wider">Security State</div>
+                    <div class="heading-font text-2xl font-black text-white mb-1">Mint Revoked</div>
+                    <p class="text-xs text-gray-500">Metadata immutable. Contract completely safe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Timeline Section -->
+        <section id="roadmap" class="py-20 border-t border-gray-900">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="heading-font text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight">System Rollout</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Strategic scaling goals across the launch deployment window.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto relative before:absolute before:top-0 before:bottom-0 before:left-4 sm:before:left-1/2 before:w-[1px] before:bg-gray-800">
+                <!-- Step 1 -->
+                <div class="relative pl-12 sm:pl-0 sm:w-1/2 sm:odd:pr-12 sm:even:pl-12 sm:even:ml-auto mb-12 sm:odd:text-right group">
+                    <div class="absolute left-1.5 sm:left-1/2 sm:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-cyan-500 border-4 border-gray-950 shadow-md group-hover:scale-110 transition-transform"></div>
+                    <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl">
+                        <span class="text-xs font-bold text-cyan-400 tracking-wider uppercase block mb-1">Phase 01</span>
+                        <h4 class="heading-font font-bold text-lg text-white mb-2">Bonding Graduation</h4>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">Establish base-layer community distribution on pump.fun and complete automatic migration to secure Raydium pool lockups.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative pl-12 sm:pl-0 sm:w-1/2 sm:odd:pr-12 sm:even:pl-12 sm:even:ml-auto mb-12 sm:odd:text-right group">
+                    <div class="absolute left-1.5 sm:left-1/2 sm:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-blue-500 border-4 border-gray-950 shadow-md group-hover:scale-110 transition-transform"></div>
+                    <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl">
+                        <span class="text-xs font-bold text-blue-400 tracking-wider uppercase block mb-1">Phase 02</span>
+                        <h4 class="heading-font font-bold text-lg text-white mb-2">Ecosystem Indexing</h4>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">Claim asset records on Dexscreener, execute profile validations, and apply for verified listings on CoinGecko and global tracking matrix charts.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative pl-12 sm:pl-0 sm:w-1/2 sm:odd:pr-12 sm:even:pl-12 sm:even:ml-auto group">
+                    <div class="absolute left-1.5 sm:left-1/2 sm:-translate-x-1/2 top-1 w-5 h-5 rounded-full bg-purple-500 border-4 border-gray-950 shadow-md group-hover:scale-110 transition-transform"></div>
+                    <div class="bg-gray-900/40 border border-gray-800 p-6 rounded-2xl">
+                        <span class="text-xs font-bold text-purple-400 tracking-wider uppercase block mb-1">Phase 03</span>
+                        <h4 class="heading-font font-bold text-lg text-white mb-2">Node Integration</h4>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">Release localized dashboard prototypes and enable node authorization mechanics utilizing structured web modules.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Profile Hub -->
+    <footer class="bg-gray-950 border-t border-gray-900 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-center sm:text-left">
+                <div class="heading-font text-sm font-bold tracking-widest text-white mb-1">SPACEMAN FUTURES</div>
+                <p class="text-xs text-gray-500">&copy; 2026. Custom Space Network. All Rights Reserved.</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://www.facebook.com/share/1B1uy3qbLa/" target="_blank" class="text-gray-500 hover:text-white transition-colors text-xl" title="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/spacemanfutures" target="_blank" class="text-gray-500 hover:text-pink-500 transition-colors text-xl" title="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" class="text-gray-500 hover:text-white transition-colors text-xl"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://telegram.org" target="_blank" class="text-gray-500 hover:text-cyan-400 transition-colors text-xl"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy to Clipboard Script Utility -->
+    <script>
+        function copyContractAddress() {
+            const caString = document.getElementById('caText').innerText;
+            const copyTextSpan = document.getElementById('copyText');
+            const copyIcon = document.getElementById('copyIcon');
+
+            navigator.clipboard.writeText(caString).then(() => {
+                // Visual Success Feedback Loop
+                copyTextSpan.innerText = "COPIED!";
+                copyIcon.className = "fa-solid fa-check text-green-400";
+                
+                setTimeout(() => {
+                    copyTextSpan.innerText = "COPY CA";
+                    copyIcon.className = "fa-regular fa-copy text-cyan-400";
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
