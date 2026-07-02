@@ -325,15 +325,18 @@
             </div>
         </section>
 
-<section id="the-theater" class="py-20 border-t border-purple-950/40">
+<!-- The Theater: Responsive Spaceship Monitor Array with Hover Curtain Effect -->
+        <section id="the-theater" class="py-20 border-t border-purple-950/40">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <div class="inline-block heading-font text-xs font-bold tracking-widest text-pink-400 uppercase mb-2">Media Core Mainframe</div>
                 <h2 class="heading-font text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">The Theater</h2>
-                <p class="text-gray-400 text-sm mt-2">Active transmissions from Hank, Zork, and tactical frontline orbital command ops.</p>
+                <p class="text-gray-400 text-sm mt-2">Active transmissions from Hank, Zork, and tactical frontline orbital command ops. Hover to open the curtains.</p>
             </div>
 
+            <!-- Glowing Monitor Grid Array -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 
+                <!-- Monitor 1: Transmission Alpha -->
                 <div class="bg-black/80 border border-purple-500/30 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(147,51,234,0.1)] group hover:border-pink-500/40 transition-colors">
                     <div class="bg-[#0b051d] px-3 py-2 border-b border-purple-500/20 flex items-center justify-between text-[10px] font-mono text-gray-400">
                         <span class="truncate uppercase"><span class="w-1.5 h-1.5 inline-block bg-pink-500 rounded-full animate-ping mr-1"></span> Feed // Hank_Logs_01</span>
@@ -341,11 +344,20 @@
                     </div>
                     <div class="p-2 bg-[#030107]">
                         <div class="relative w-full overflow-hidden rounded-xl bg-black aspect-[9/16]">
-                            <iframe src="https://www.youtube.com/embed/1g7IX-w8-6U" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/SsizXu2JwPI" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            
+                            <!-- Theater Curtain Overlay Split Matrix -->
+                            <div class="absolute inset-0 flex pointer-events-none z-10 overflow-hidden">
+                                <!-- Left Curtain Layer -->
+                                <div class="w-1/2 h-full bg-gradient-to-r from-red-800 via-red-700 to-red-950 border-r border-red-950/40 transition-transform duration-700 ease-in-out origin-left group-hover:-translate-x-full shadow-[inset_-15px_0_20px_rgba(0,0,0,0.6)]"></div>
+                                <!-- Right Curtain Layer -->
+                                <div class="w-1/2 h-full bg-gradient-to-l from-red-800 via-red-700 to-red-950 border-l border-red-950/40 transition-transform duration-700 ease-in-out origin-right group-hover:translate-x-full shadow-[inset_15px_0_20px_rgba(0,0,0,0.6)]"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Monitor 2: Transmission Beta -->
                 <div class="bg-black/80 border border-purple-500/30 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(147,51,234,0.1)] group hover:border-cyan-500/40 transition-colors">
                     <div class="bg-[#0b051d] px-3 py-2 border-b border-purple-500/20 flex items-center justify-between text-[10px] font-mono text-gray-400">
                         <span class="truncate uppercase"><span class="w-1.5 h-1.5 inline-block bg-cyan-400 rounded-full animate-pulse mr-1"></span> Feed // Zork_Telemetry</span>
@@ -353,11 +365,20 @@
                     </div>
                     <div class="p-2 bg-[#030107]">
                         <div class="relative w-full overflow-hidden rounded-xl bg-black aspect-[9/16]">
-                            <iframe src="https://www.youtube.com/embed/2RCMsAyDk2c" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/oNFdA88lhSI" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            
+                            <!-- Theater Curtain Overlay Split Matrix -->
+                            <div class="absolute inset-0 flex pointer-events-none z-10 overflow-hidden">
+                                <!-- Left Curtain Layer -->
+                                <div class="w-1/2 h-full bg-gradient-to-r from-red-800 via-red-700 to-red-950 border-r border-red-950/40 transition-transform duration-700 ease-in-out origin-left group-hover:-translate-x-full shadow-[inset_-15px_0_20px_rgba(0,0,0,0.6)]"></div>
+                                <!-- Right Curtain Layer -->
+                                <div class="w-1/2 h-full bg-gradient-to-l from-red-800 via-red-700 to-red-950 border-l border-red-950/40 transition-transform duration-700 ease-in-out origin-right group-hover:translate-x-full shadow-[inset_15px_0_20px_rgba(0,0,0,0.6)]"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Monitor 3: Transmission Gamma -->
                 <div class="bg-black/80 border border-purple-500/30 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(147,51,234,0.1)] group hover:border-purple-500/50 transition-colors sm:col-span-2 lg:col-span-1 max-w-sm sm:max-w-none mx-auto w-full">
                     <div class="bg-[#0b051d] px-3 py-2 border-b border-purple-500/20 flex items-center justify-between text-[10px] font-mono text-gray-400">
                         <span class="truncate uppercase"><span class="w-1.5 h-1.5 inline-block bg-purple-500 rounded-full mr-1"></span> Feed // System_Rollout</span>
@@ -365,13 +386,22 @@
                     </div>
                     <div class="p-2 bg-[#030107]">
                         <div class="relative w-full overflow-hidden rounded-xl bg-black aspect-[9/16]">
-                            <iframe src="https://www.youtube.com/embed/SsizXu2JwPI" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/peWcIon9jek" class="absolute top-0 left-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                            
+                            <!-- Theater Curtain Overlay Split Matrix -->
+                            <div class="absolute inset-0 flex pointer-events-none z-10 overflow-hidden">
+                                <!-- Left Curtain Layer -->
+                                <div class="w-1/2 h-full bg-gradient-to-r from-red-800 via-red-700 to-red-950 border-r border-red-950/40 transition-transform duration-700 ease-in-out origin-left group-hover:-translate-x-full shadow-[inset_-15px_0_20px_rgba(0,0,0,0.6)]"></div>
+                                <!-- Right Curtain Layer -->
+                                <div class="w-1/2 h-full bg-gradient-to-l from-red-800 via-red-700 to-red-950 border-l border-red-950/40 transition-transform duration-700 ease-in-out origin-right group-hover:translate-x-full shadow-[inset_15px_0_20px_rgba(0,0,0,0.6)]"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
 
+            <!-- Call to Action Link Hub -->
             <div class="text-center mt-10">
                 <a href="https://youtube.com/@SpacemanFutures" target="_blank" class="heading-font inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-950/40 to-black border border-purple-500/30 text-xs font-bold text-gray-300 hover:text-white hover:border-pink-500/40 transition-all active:scale-95 shadow-md">
                     <i class="fa-brands fa-youtube text-red-500 text-sm"></i> ACCESS MAIN DEEP SPACE COMMUNICATIONS ARRAY
