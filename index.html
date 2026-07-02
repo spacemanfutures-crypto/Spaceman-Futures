@@ -219,14 +219,14 @@
         
         <!-- Live Embedded Chart Interface Frame -->
         <div class="p-2 sm:p-4 bg-[#030107]/95">
-            <div class="relative w-full overflow-hidden rounded-xl bg-black border border-purple-950" style="padding-top: 56.25%;">
-                <iframe 
-                    src="https://dexscreener.com/solana/5hnve6wazvsjnnodv7unv6jqu1nj23xxbdh6cfiwfk7h?embed=1&theme=dark&trades=0&info=0" 
-                    class="absolute top-0 left-0 w-full h-full border-0"
-                    title="DexScreener Live Chart Widget">
-                </iframe>
-            </div>
-        </div>
+    <div class="relative w-full overflow-hidden rounded-xl bg-black border border-purple-950" style="padding-top: 56.25%;">
+        <iframe 
+            data-src="https://dexscreener.com/solana/5hnve6wazvsjnnodv7unv6jqu1nj23xxbdh6cfiwfk7h?embed=1&theme=dark&trades=0&info=0" 
+            class="lazy-chart absolute top-0 left-0 w-full h-full border-0"
+            title="DexScreener Live Chart Widget">
+        </iframe>
+    </div>
+</div>
 
         <!-- Terminal System Feed Status Footer -->
         <div class="bg-[#090416] px-5 py-3 border-t border-purple-500/10 flex items-center justify-between font-mono text-[10px] sm:text-xs text-gray-500">
@@ -750,36 +750,59 @@
             output.scrollTop = output.scrollHeight;
         }
 
-        // ==========================================
-        // 3. OPTIMIZATION: SCROLL INTELLIGENCE FOR THE THEATER
+// ==========================================
+        // 3. OPTIMIZATION: SCROLL INTELLIGENCE FOR CHARTS & THEATER
         // ==========================================
         document.addEventListener("DOMContentLoaded", () => {
+            
+            // --- A. DexScreener Chart Lazy Loader ---
+            const chartOptions = {
+                root: null,
+                rootMargin: "300px", // Starts downloading the market chart 300px before it hits the screen
+                threshold: 0.1
+            };
+
+            const chartObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target.querySelector(".lazy-chart");
+                        if (iframe && iframe.dataset.src) {
+                            iframe.src = iframe.dataset.src;
+                            iframe.removeAttribute("data-src"); // Clear memory reference
+                            chartObserver.unobserve(entry.target); // Stop tracking once loaded
+                        }
+                    }
+                });
+            }, chartOptions);
+
+            // Bind observer to the chart parent section container
+            const chartSection = document.getElementById("live-chart");
+            if (chartSection) chartObserver.observe(chartSection);
+
+
+            // --- B. Theater Grid Card Handler ---
             const theaterOptions = {
                 root: null,
-                rootMargin: "200px", // Automatically triggers network pipelines 200px before reaching the viewport
+                rootMargin: "200px", 
                 threshold: 0.4
             };
 
             const theaterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Action A: Open the high-realism velvet curtains
                         entry.target.classList.add("open");
 
-                        // Action B: Hot-wire the dynamic data source to activate YouTube player streams
                         const iframe = entry.target.querySelector(".lazy-video");
                         if (iframe && iframe.dataset.src) {
                             iframe.src = iframe.dataset.src;
-                            iframe.removeAttribute("data-src"); // Purge indicator data strings to safeguard pipeline loops
+                            iframe.removeAttribute("data-src");
                         }
                     } else {
-                        // Optional: Smoothly snap curtains back shut when user scrolls far away
                         entry.target.classList.remove("open");
                     }
                 });
             }, theaterOptions);
 
-            // Bind observer loop parameters to theater array components
             document.querySelectorAll(".theater-card").forEach(card => {
                 theaterObserver.observe(card);
             });
