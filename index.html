@@ -241,17 +241,19 @@
                     </div>
                 </div>
 
+                <!-- MOBILE VIEW: Live Automated Price Telemetry Deck -->
                 <div class="block md:hidden p-6 bg-[#030107]/95 text-center space-y-4">
                     <div class="text-[10px] font-mono tracking-widest text-gray-500 uppercase">// SYSTEM OPERATIONAL TELEMETRY SUMMARY</div>
-                    <div class="flex items-center justify-center gap-2">
-                        <span class="heading-font text-3xl font-black text-white tracking-wider">$SPXR</span>
-                        <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/20 px-2 py-0.5 rounded flex items-center gap-1">
-                            <i class="fa-solid fa-caret-up"></i> LIVE
-                        </span>
+                    <div class="flex flex-col items-center justify-center gap-1">
+                        <!-- Dynamic Price Insertion Targets -->
+                        <div id="mobileSpxrPrice" class="heading-font text-3xl font-black text-white tracking-wider">LOADING...</div>
+                        <div id="mobileSpxrChange" class="text-xs font-mono font-bold text-gray-400 px-2 py-0.5 rounded flex items-center gap-1">
+                            --
+                        </div>
                     </div>
                     <div class="inline-flex gap-6 justify-center text-xs font-mono text-gray-400 bg-purple-950/20 border border-purple-500/10 p-3 rounded-xl w-full max-w-sm mx-auto">
                         <div><span class="text-purple-400 block text-[10px] uppercase mb-0.5">Network</span>Solana</div>
-                        <div class="border-l border-purple-500/10 pl-6"><span class="text-pink-400 block text-[10px] uppercase mb-0.5">Tax</span>0% Clear</div>
+                        <div class="border-l border-purple-500/10 pl-6"><span class="text-pink-400 block text-[10px] uppercase mb-0.5">Tax</span>0% Clean</div>
                         <div class="border-l border-purple-500/10 pl-6"><span class="text-cyan-400 block text-[10px] uppercase mb-0.5">Liquidity</span>100% Burned</div>
                     </div>
                     <p class="text-[11px] text-gray-500 italic max-w-xs mx-auto">Full trading charts can be accessed directly using desktop layouts or primary block scanners.</p>
@@ -669,6 +671,50 @@
 
         // Fire up the satellite network link on system load
         document.addEventListener("DOMContentLoaded", initializeSpaceNewsFeed);
+
+// ==========================================
+        // AUTOMATED MOBILE METRICS TELEMETRY ENGINE
+        // ==========================================
+        async function fetchMobileSpxrPrice() {
+            const priceEl = document.getElementById("mobileSpxrPrice");
+            const changeEl = document.getElementById("mobileSpxrChange");
+            if (!priceEl || !changeEl) return;
+
+            const tokenAddress = "GcAkpXbn1SD5SLhpVdysZv8ax4GcAfjSmi3EsgZxpump";
+            const apiUrl = `https://api.dexscreener.com/latest/dex/tokens/${tokenAddress}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error("Price link failed");
+                const data = await response.json();
+
+                if (data.pairs && data.pairs.length > 0) {
+                    // Pull top active pair calculations
+                    const primaryPair = data.pairs[0];
+                    const priceUsd = parseFloat(primaryPair.priceUsd);
+                    const change24h = parseFloat(primaryPair.priceChange.h24);
+
+                    // Formats tiny micro-cap token decimals cleanly 
+                    priceEl.innerText = `$${priceUsd < 0.0001 ? priceUsd.toFixed(6) : priceUsd.toFixed(4)}`;
+
+                    // Apply conditional color logic dynamically based on market performance status
+                    if (change24h >= 0) {
+                        changeEl.className = "text-xs font-mono font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/20 px-2 py-0.5 rounded flex items-center gap-1";
+                        changeEl.innerHTML = `<i class="fa-solid fa-caret-up"></i> +${change24h}% (24H)`;
+                    } else {
+                        changeEl.className = "text-xs font-mono font-bold text-rose-400 bg-rose-950/40 border border-rose-500/20 px-2 py-0.5 rounded flex items-center gap-1";
+                        changeEl.innerHTML = `<i class="fa-solid fa-caret-down"></i> ${change24h}% (24H)`;
+                    }
+                }
+            } catch (error) {
+                console.error("Price telemetry transmission error:", error);
+                priceEl.innerText = "$SPXR ACTIVE";
+                changeEl.innerText = "LIVE SCANNER SECURE";
+            }
+        }
+
+        // Boot price checks on initialization
+        document.addEventListener("DOMContentLoaded", fetchMobileSpxrPrice);
 
         // ==========================================
         // 1. UTILITY: COPY CONTRACT ADDRESS TO CLIPBOARD
