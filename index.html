@@ -75,7 +75,6 @@
                 <a href="#the-theater" class="hover:text-green-400 transition-colors tracking-wide">The Theater</a>
                 <a href="#crew-logs" class="hover:text-green-400 transition-colors tracking-wide">The Crew</a>
                 <a href="#ecosystem" class="hover:text-green-400 transition-colors tracking-wide">Ecosystem</a>
-                <a href="https://t.me/spacemanfutures" target="_blank" class="hover:text-green-400 transition-colors tracking-wide"><i class="fa-brands fa-telegram mr-1"></i>The Telegram</a>
                 <a href="#how-to-buy" class="hover:text-green-400 transition-colors tracking-wide">How To Buy</a>
                 <a href="#tokenomics" class="hover:text-green-400 transition-colors tracking-wide">Tokenomics</a>
                 <a href="#roadmap" class="hover:text-green-400 transition-colors tracking-wide">System Rollout</a>
@@ -97,7 +96,7 @@
         </div>
         
         <div class="w-full overflow-hidden relative font-mono text-[11px] tracking-wider text-cyan-400 uppercase">
-            <div id="spxrNewsTicker" class="animate-ticker flex gap-12 pl-6">
+            <div id="spxrNewsTicker" class="animate-ticker flex gap-12 pl-6 [animation-duration:45s] md:[animation-duration:90s]">
                 <span>📡 Connecting to SpaceNews Core Transmission Node...</span>
             </div>
         </div>
@@ -232,7 +231,7 @@
                     </div>
                 </div>
                 
-                <div class="p-2 sm:p-4 bg-[#030107]/95">
+                <div class="hidden md:block p-4 bg-[#030107]/95">
                     <div class="relative w-full overflow-hidden rounded-xl bg-black border border-purple-950" style="padding-top: 56.25%;">
                         <iframe 
                             data-src="https://dexscreener.com/solana/5hnve6wazvsjnnodv7unv6jqu1nj23xxbdh6cfiwfk7h?embed=1&theme=dark&trades=0&info=0" 
@@ -240,6 +239,22 @@
                             title="DexScreener Live Chart Widget">
                         </iframe>
                     </div>
+                </div>
+
+                <div class="block md:hidden p-6 bg-[#030107]/95 text-center space-y-4">
+                    <div class="text-[10px] font-mono tracking-widest text-gray-500 uppercase">// SYSTEM OPERATIONAL TELEMETRY SUMMARY</div>
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="heading-font text-3xl font-black text-white tracking-wider">$SPXR</span>
+                        <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/40 border border-emerald-500/20 px-2 py-0.5 rounded flex items-center gap-1">
+                            <i class="fa-solid fa-caret-up"></i> LIVE
+                        </span>
+                    </div>
+                    <div class="inline-flex gap-6 justify-center text-xs font-mono text-gray-400 bg-purple-950/20 border border-purple-500/10 p-3 rounded-xl w-full max-w-sm mx-auto">
+                        <div><span class="text-purple-400 block text-[10px] uppercase mb-0.5">Network</span>Solana</div>
+                        <div class="border-l border-purple-500/10 pl-6"><span class="text-pink-400 block text-[10px] uppercase mb-0.5">Tax</span>0% Clear</div>
+                        <div class="border-l border-purple-500/10 pl-6"><span class="text-cyan-400 block text-[10px] uppercase mb-0.5">Liquidity</span>100% Burned</div>
+                    </div>
+                    <p class="text-[11px] text-gray-500 italic max-w-xs mx-auto">Full trading charts can be accessed directly using desktop layouts or primary block scanners.</p>
                 </div>
 
                 <div class="bg-[#090416] px-5 py-3 border-t border-purple-500/10 flex items-center justify-between font-mono text-[10px] sm:text-xs text-gray-500">
